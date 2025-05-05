@@ -8,10 +8,13 @@ def calculate_bmi(height, weight):
 def check_bmi(bmi_value):
     if (bmi_value > 25.0):
         print("you are over weight")
+        print("1")
     if (bmi_value >= 18.5 and bmi_value <= 25.0):
         print("you are very healthy")
+        print("0")
     if (bmi_value < 18.5):
         print("you are under weight")
+        print("-1")
 
 def main():
     h =float(input("Enter your height : "))
