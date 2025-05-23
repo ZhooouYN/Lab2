@@ -1,3 +1,4 @@
+import statistics
 def main():
     print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
     display_main_menu()
@@ -12,27 +13,30 @@ def display_main_menu():
 
 def get_user_input():
     num = input().split(",")
-    Nums = [float(ele) for ele in num]
+    Nums = list(map(float,num))
     print(Nums)
     return Nums
 
 def cal_average(num_list):
-    average = sum(num_list)/len(num_list) 
-    print("the average value is " + average)
+    total=sum(num_list)
+    average = total/len(num_list) 
+    print("the average value is " , average)
     return average
 
 def find_min_max(nums):
     minimum = min(nums)
     maximum = max(nums)
     Num_list = [minimum, maximum]
-    print("minimum and maximum values are: " + Num_list)
+    print("minimum and maximum values are: " ,Num_list)
     return Num_list
     
 def sort_temperature(List):
-    ordered = List.sort()
+    ordered = sorted(List)
     return ordered
 
 def cal_median_temperature(List):
+    print(List)
+    '''
     L = len(List)
     if L%2 == 1: #odd number
         median = List[(L-1)/2]
@@ -40,6 +44,9 @@ def cal_median_temperature(List):
         median = List[((L/2-1)+(L/2))/2]
         #print(statistics.median(List))
     print("the median value is : " + median)
+    '''
+    median = statistics.median(List)
+    print(median)
     return median
 
 if __name__ =="__main__":
